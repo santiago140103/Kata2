@@ -11,12 +11,8 @@ public class Kata2 {
         
         Map<Integer, Integer> hist = new HashMap<Integer, Integer>();
         
-        for (int i=0; i<data.length;i++) {
-            if (hist.containsKey(data[i])) {
-                hist.put(data[i], hist.get(data[i])+1);
-            } else {
-                hist.put(data[i],1);
-            }
+        for (int i=0;i<data.length;i++) {
+            hist.put(data[i], hist.containsKey(data[i]) ? hist.get(data[i]) + 1 : 1);
         }
         
         for (int key: hist.keySet()) {
