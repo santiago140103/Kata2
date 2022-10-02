@@ -9,14 +9,12 @@ public class Kata2 {
         
         int[] data = {1, 3, 5, 3, 4, 2, 8, 8, 8, 7, 4, 9, 3, 2, 1};
         
-        Map<Integer, Integer> hist = new HashMap<Integer, Integer>();
+        Histogram histo = new Histogram(data);
         
-        for (int i=0;i<data.length;i++) {
-            hist.put(data[i], hist.containsKey(data[i]) ? hist.get(data[i]) + 1 : 1);
-        }
+        Map<Integer, Integer> histogram = histo.getHistogram();
         
-        for (int key: hist.keySet()) {
-            System.out.println(key + " ==> " + hist.get(key));
+        for (int key: histogram.keySet()) {
+            System.out.println(key + " ==> " + histogram.get(key));
         }
     }
     
